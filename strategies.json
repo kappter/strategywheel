@@ -4,16 +4,8 @@
     "name": "Guided Investigation",
     "category": "Inquiry & Experimentation",
     "cognitiveLevel": "Analyze",
-    "skills": [
-      "Analyze evidence",
-      "Evaluate reliability",
-      "Explain reasoning"
-    ],
-    "activityPossibilities": [
-      "Paper Copter",
-      "Pendulum Test",
-      "Ramp Trial"
-    ],
+    "skills": ["Analyze evidence", "Evaluate reliability", "Explain reasoning"],
+    "activityPossibilities": ["Paper Copter", "Pendulum Test", "Ramp Trial"],
     "setupTemplate": "Give students a focused question about {concept}, a shared procedure, and one meaningful variable they may change.",
     "studentMoveTemplate": "Predict, test, measure repeatedly, and revise the original claim using the evidence produced.",
     "teacherChallengeTemplate": "Separate what students directly observed from what they inferred, then identify what the conclusion reaches beyond the experiment.",
@@ -24,16 +16,8 @@
     "name": "Teach the Tool",
     "category": "Foundation & Mental Models",
     "cognitiveLevel": "Understand",
-    "skills": [
-      "Apply a concept",
-      "Explain a concept",
-      "Synthesize"
-    ],
-    "activityPossibilities": [
-      "Teach the Tool",
-      "Three-Step Guide",
-      "User Manual Sprint"
-    ],
+    "skills": ["Apply a concept", "Explain a concept", "Synthesize"],
+    "activityPossibilities": ["Teach the Tool", "Three-Step Guide", "User Manual Sprint"],
     "setupTemplate": "Turn {concept} into a tool another learner could use.",
     "studentMoveTemplate": "Create a three-step guide plus one warning about misuse.",
     "teacherChallengeTemplate": "Test the guide on a peer who has not seen the original example.",
@@ -44,16 +28,8 @@
     "name": "New Situation Transfer",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": [
-      "Apply a concept",
-      "Transfer knowledge",
-      "Problem solve"
-    ],
-    "activityPossibilities": [
-      "New Situation Transfer",
-      "Change the Setting",
-      "Context Swap"
-    ],
+    "skills": ["Apply a concept", "Transfer knowledge", "Problem solve"],
+    "activityPossibilities": ["New Situation Transfer", "Change the Setting", "Context Swap"],
     "setupTemplate": "Take the core rule of {concept} and apply it to an unrelated domain.",
     "studentMoveTemplate": "Identify 3 rules from {concept} that hold true in the new domain and 1 rule that breaks.",
     "teacherChallengeTemplate": "Ask students to justify why the rule broke in the new context.",
@@ -64,16 +40,8 @@
     "name": "Worked Example Remix",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": [
-      "Apply a concept",
-      "Procedural fluency",
-      "Modify parameters"
-    ],
-    "activityPossibilities": [
-      "Worked Example Remix",
-      "Change One Thing",
-      "Parameter Shift"
-    ],
+    "skills": ["Apply a concept", "Procedural fluency", "Modify parameters"],
+    "activityPossibilities": ["Worked Example Remix", "Change One Thing", "Parameter Shift"],
     "setupTemplate": "Provide a fully solved example demonstrating {concept}.",
     "studentMoveTemplate": "Change a single variable or constraint and recalculate/rewrite the final outcome.",
     "teacherChallengeTemplate": "Predict how much the final result will shift before completing the calculation.",
@@ -84,16 +52,8 @@
     "name": "Build a Model",
     "category": "Foundation & Mental Models",
     "cognitiveLevel": "Understand",
-    "skills": [
-      "Apply a concept",
-      "Visualize systems",
-      "Structural mapping"
-    ],
-    "activityPossibilities": [
-      "Build a Model",
-      "System Diagram",
-      "Flowchart Sprint"
-    ],
+    "skills": ["Apply a concept", "Visualize systems", "Structural mapping"],
+    "activityPossibilities": ["Build a Model", "System Diagram", "Flowchart Sprint"],
     "setupTemplate": "Map out the underlying structure or steps of {concept}.",
     "studentMoveTemplate": "Draw a diagram or flowchart showing how input leads to output in {concept}.",
     "teacherChallengeTemplate": "Remove one key component from the diagram and ask peers to explain what breaks.",
@@ -104,16 +64,8 @@
     "name": "Debug the Transfer",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": [
-      "Apply a concept",
-      "Debug & diagnose",
-      "Critical evaluation"
-    ],
-    "activityPossibilities": [
-      "Debug the Transfer",
-      "Find the Bug",
-      "Misconception Fix"
-    ],
+    "skills": ["Apply a concept", "Debug & diagnose", "Critical evaluation"],
+    "activityPossibilities": ["Debug the Transfer", "Find the Bug", "Misconception Fix"],
     "setupTemplate": "Provide a solution involving {concept} that contains an intentional breakdown in logic.",
     "studentMoveTemplate": "Locate the exact step where the logic fails, explain why it's wrong, and supply the fix.",
     "teacherChallengeTemplate": "Have students write the common misconception that led to the error.",
@@ -124,16 +76,8 @@
     "name": "Design Constraint",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": [
-      "Apply a concept",
-      "Creative problem solving",
-      "Adaptation"
-    ],
-    "activityPossibilities": [
-      "Design Constraint",
-      "One-Hand Build",
-      "Restricted Palette"
-    ],
+    "skills": ["Apply a concept", "Creative problem solving", "Adaptation"],
+    "activityPossibilities": ["Design Constraint", "One-Hand Build", "Restricted Palette"],
     "setupTemplate": "Solve a standard problem involving {concept} under an artificial restriction.",
     "studentMoveTemplate": "Complete the task without using [restricted tool/term/step].",
     "teacherChallengeTemplate": "Explain how the constraint forced a deeper understanding of the core concept.",
@@ -144,16 +88,8 @@
     "name": "Constraint Swap",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": [
-      "Apply a concept",
-      "Comparative reasoning",
-      "System analysis"
-    ],
-    "activityPossibilities": [
-      "Constraint Swap",
-      "Trade-a-Design",
-      "Rule Inversion"
-    ],
+    "skills": ["Apply a concept", "Comparative reasoning", "System analysis"],
+    "activityPossibilities": ["Constraint Swap", "Trade-a-Design", "Rule Inversion"],
     "setupTemplate": "Identify two core assumptions or constraints in {concept}.",
     "studentMoveTemplate": "Swap or reverse the two constraints and re-evaluate how the system behaves.",
     "teacherChallengeTemplate": "Evaluate whether the swapped system is more efficient or prone to failure.",
@@ -164,16 +100,8 @@
     "name": "Case File",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": [
-      "Apply a concept",
-      "Diagnostic reasoning",
-      "Evidence synthesis"
-    ],
-    "activityPossibilities": [
-      "Case File",
-      "Diagnose the Scenario",
-      "Root Cause Sprint"
-    ],
+    "skills": ["Apply a concept", "Diagnostic reasoning", "Evidence synthesis"],
+    "activityPossibilities": ["Case File", "Diagnose the Scenario", "Root Cause Sprint"],
     "setupTemplate": "Present raw data or symptoms caused by a scenario involving {concept}.",
     "studentMoveTemplate": "Analyze the evidence to identify the root cause and propose a solution.",
     "teacherChallengeTemplate": "Require students to rank evidence items by relevance to the diagnosis.",
