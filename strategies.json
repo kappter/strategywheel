@@ -1,10 +1,34 @@
 [
   {
+    "id": "guided-investigation",
+    "name": "Guided Investigation",
+    "category": "Inquiry & Experimentation",
+    "cognitiveLevel": "Analyze",
+    "skills": [
+      "Analyze evidence",
+      "Evaluate reliability",
+      "Explain reasoning"
+    ],
+    "activityPossibilities": [
+      "Paper Copter",
+      "Pendulum Test",
+      "Ramp Trial"
+    ],
+    "setupTemplate": "Give students a focused question about {concept}, a shared procedure, and one meaningful variable they may change.",
+    "studentMoveTemplate": "Predict, test, measure repeatedly, and revise the original claim using the evidence produced.",
+    "teacherChallengeTemplate": "Separate what students directly observed from what they inferred, then identify what the conclusion reaches beyond the experiment.",
+    "promptTemplate": "Create a visual guided investigation of {concept} that develops {skill}. Show the prediction, variables, repeated trials, evidence pattern, uncertainty, and qualified claim."
+  },
+  {
     "id": "teach-the-tool",
     "name": "Teach the Tool",
     "category": "Foundation & Mental Models",
     "cognitiveLevel": "Understand",
-    "skills": ["Apply a concept", "Explain a concept", "Synthesize"],
+    "skills": [
+      "Apply a concept",
+      "Explain a concept",
+      "Synthesize"
+    ],
     "activityPossibilities": [
       "Teach the Tool",
       "Three-Step Guide",
@@ -20,7 +44,11 @@
     "name": "New Situation Transfer",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": ["Apply a concept", "Transfer knowledge", "Problem solve"],
+    "skills": [
+      "Apply a concept",
+      "Transfer knowledge",
+      "Problem solve"
+    ],
     "activityPossibilities": [
       "New Situation Transfer",
       "Change the Setting",
@@ -36,7 +64,11 @@
     "name": "Worked Example Remix",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": ["Apply a concept", "Procedural fluency", "Modify parameters"],
+    "skills": [
+      "Apply a concept",
+      "Procedural fluency",
+      "Modify parameters"
+    ],
     "activityPossibilities": [
       "Worked Example Remix",
       "Change One Thing",
@@ -52,7 +84,11 @@
     "name": "Build a Model",
     "category": "Foundation & Mental Models",
     "cognitiveLevel": "Understand",
-    "skills": ["Apply a concept", "Visualize systems", "Structural mapping"],
+    "skills": [
+      "Apply a concept",
+      "Visualize systems",
+      "Structural mapping"
+    ],
     "activityPossibilities": [
       "Build a Model",
       "System Diagram",
@@ -68,7 +104,11 @@
     "name": "Debug the Transfer",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": ["Apply a concept", "Debug & diagnose", "Critical evaluation"],
+    "skills": [
+      "Apply a concept",
+      "Debug & diagnose",
+      "Critical evaluation"
+    ],
     "activityPossibilities": [
       "Debug the Transfer",
       "Find the Bug",
@@ -84,7 +124,11 @@
     "name": "Design Constraint",
     "category": "Skill Application & Adaptation",
     "cognitiveLevel": "Apply",
-    "skills": ["Apply a concept", "Creative problem solving", "Adaptation"],
+    "skills": [
+      "Apply a concept",
+      "Creative problem solving",
+      "Adaptation"
+    ],
     "activityPossibilities": [
       "Design Constraint",
       "One-Hand Build",
@@ -100,7 +144,11 @@
     "name": "Constraint Swap",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": ["Apply a concept", "Comparative reasoning", "System analysis"],
+    "skills": [
+      "Apply a concept",
+      "Comparative reasoning",
+      "System analysis"
+    ],
     "activityPossibilities": [
       "Constraint Swap",
       "Trade-a-Design",
@@ -116,7 +164,11 @@
     "name": "Case File",
     "category": "Analysis & Evaluation",
     "cognitiveLevel": "Analyze",
-    "skills": ["Apply a concept", "Diagnostic reasoning", "Evidence synthesis"],
+    "skills": [
+      "Apply a concept",
+      "Diagnostic reasoning",
+      "Evidence synthesis"
+    ],
     "activityPossibilities": [
       "Case File",
       "Diagnose the Scenario",
