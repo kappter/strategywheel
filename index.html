@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strategy Wheel</title>
+  <meta name="description" content="Spin for a skill-matched teaching strategy and generate a visualization prompt.">
+  <style>
+    :root{--navy:#263642;--gold:#d6a84b;--ink:#20303b;--paper:#f4f0e6;--cream:#fffdf7;--muted:#65737b}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 8%,rgba(214,168,75,.22),transparent 25rem),linear-gradient(135deg,#e8eef0,var(--paper) 55%,#e7eceb)}
+    button,input,select,textarea{font:inherit}.shell{width:min(1420px,100%);margin:auto;padding:clamp(18px,3vw,42px)}header{display:flex;align-items:center;gap:14px;margin-bottom:22px}.mark{width:48px;height:48px;border-radius:50%;border:5px solid var(--gold);background:conic-gradient(#e15b64 0 25%,#4da7a0 0 50%,#5d78b8 0 75%,#e48b45 0);box-shadow:inset 0 0 0 6px var(--navy)}
+    h1,h2,h3{font-family:Georgia,serif}h1{margin:0;font-size:clamp(1.8rem,3vw,2.7rem)}header p{margin:2px 0 0;color:var(--muted);font-weight:650}main{display:grid;grid-template-columns:minmax(340px,.78fr) minmax(560px,1.22fr);gap:clamp(20px,3vw,38px);align-items:start}.panel{background:rgba(255,253,247,.94);border:1px solid rgba(86,106,117,.22);box-shadow:0 18px 50px rgba(27,43,53,.16);border-radius:24px}.controls{padding:30px;position:sticky;top:22px}.eyebrow{color:#826014;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}h2{margin:7px 0 8px}.intro{color:var(--muted)}label{display:block;margin:18px 0 7px;font-weight:850}input,select,textarea{width:100%;border:2px solid #bdc9ce;border-radius:12px;background:#fff;color:var(--ink);padding:11px 13px}input,select{min-height:50px}.mode{margin-top:16px;padding:12px;border-left:5px solid #597788;background:#edf3f4}.wheel-panel{padding:clamp(16px,2.5vw,30px)}.wheel-wrap{position:relative;width:min(100%,660px);aspect-ratio:1;margin:auto;display:grid;place-items:center}.pointer{position:absolute;top:-2px;left:50%;transform:translateX(-50%);z-index:5;width:0;height:0;border-left:23px solid transparent;border-right:23px solid transparent;border-top:50px solid var(--gold);filter:drop-shadow(0 4px 2px #0004)}canvas{width:94%;height:94%;border-radius:50%;border:12px solid var(--navy);background:white;box-shadow:0 10px 0 #1c2b34,0 20px 42px #172a3545;transition:transform 5.4s cubic-bezier(.12,.67,.08,1)}.hub{position:absolute;width:20%;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:var(--navy);border:7px solid var(--gold);color:#fff;font-weight:950}.spin,.prompt-btn{display:block;width:min(100%,420px);margin:10px auto 0;min-height:56px;border:0;border-radius:13px;color:var(--navy);background:var(--gold);box-shadow:0 5px 0 #9e7420;font-weight:950;text-transform:uppercase}.spin:disabled{cursor:wait;filter:saturate(.5)}.result{display:none;margin-top:24px;border:2px solid var(--gold);border-radius:18px;background:#fffaf0;overflow:hidden}.result.show{display:block}.result-head{padding:16px 20px;color:#fff;background:var(--navy)}.result-head h3{margin:2px 0 0;font-size:1.55rem}.body{padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.block{padding:14px;border:1px solid #ddcfaa;border-radius:11px;background:#fff}.wide{grid-column:1/-1;background:#eef4f6;border-color:#b9c9d0}.block b{display:block;margin-bottom:4px;color:#765712;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.prompt{display:none;margin-top:14px}.prompt.show{display:block}textarea{min-height:190px;resize:vertical;font:500 .92rem/1.5 ui-monospace,monospace}.copy{margin-top:8px;border:2px solid #80929b;border-radius:9px;background:#fff;padding:8px 14px;font-weight:800}
+    .error{padding:18px;border:2px solid #b44343;background:#fff1f1;border-radius:12px;color:#7b2525}
+    @media(max-width:940px){main{grid-template-columns:1fr}.controls{position:static}}@media(max-width:600px){.shell{padding:14px}.panel{border-radius:17px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}canvas{border-width:8px}}
+    @media(prefers-reduced-motion:reduce){canvas{transition-duration:.01s}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header><div class="mark" aria-hidden="true"></div><div><h1>Strategy Wheel</h1><p>See the possibilities. Spin for the instructional move.</p></div></header>
+    <main>
+      <section class="panel controls">
+        <div class="eyebrow">Set the target</div><h2>What are we trying to understand?</h2>
+        <p class="intro">The wheel keeps every strategy visible while the selector favors activities that directly support the chosen skill.</p>
+        <label for="concept">Concept or evidence set</label><input id="concept" value="paper helicopter experiment results" maxlength="100">
+        <label for="skill">Skill to build</label><select id="skill"></select>
+        <div class="mode"><strong>Intelligent spin:</strong> 80% direct skill match · 20% productive stretch</div>
+      </section>
+      <section class="panel wheel-panel">
+        <div id="loading">Loading strategy catalog…</div>
+        <div id="app" hidden>
+          <div class="wheel-wrap"><div class="pointer"></div><canvas id="wheel" width="900" height="900"></canvas><div class="hub">SPIN</div></div>
+          <button class="spin" id="spin">Spin for a strategy</button>
+          <article class="result" id="result" aria-live="polite">
+            <div class="result-head"><div class="eyebrow" style="color:#f3d991" id="match"></div><h3 id="title"></h3></div>
+            <div class="body"><div class="grid">
+              <div class="block wide"><b>Category + activity possibilities</b><span id="activities"></span></div>
+              <div class="block"><b>Set up</b><span id="setup"></span></div><div class="block"><b>Student move</b><span id="move"></span></div>
+              <div class="block wide"><b>Teacher challenge</b><span id="challenge"></span></div>
+            </div>
+            <button class="prompt-btn" id="generate">Generate visualization prompt</button>
+            <div class="prompt" id="promptBox"><label for="promptText">Ready-to-use prompt</label><textarea id="promptText" readonly></textarea><button class="copy" id="copy">Copy prompt</button></div></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module">
+    import {loadStrategies,getStrategies,getStrategy} from './strategySelector.js';
+    const colors=['#e15b64','#4da7a0','#5d78b8','#e48b45','#8a67ad','#3c8c72','#d06d9b','#b79435'];
+    const canvas=document.querySelector('#wheel'),ctx=canvas.getContext('2d'),skill=document.querySelector('#skill'),concept=document.querySelector('#concept');
+    let rotation=0,spinning=false,selected=null;
+    function draw(){const data=getStrategies(),c=450,r=440,arc=Math.PI*2/data.length;ctx.clearRect(0,0,900,900);data.forEach((s,i)=>{const start=-Math.PI/2+i*arc;ctx.beginPath();ctx.moveTo(c,c);ctx.arc(c,c,r,start,start+arc);ctx.closePath();ctx.fillStyle=colors[i%colors.length];ctx.fill();ctx.strokeStyle='#fffdf7';ctx.lineWidth=5;ctx.stroke();ctx.save();ctx.translate(c,c);ctx.rotate(start+arc/2);ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillStyle='#fff';ctx.font='850 25px system-ui';ctx.fillText(s.category,r-35,-20);ctx.font='650 18px system-ui';ctx.fillText(s.activityPossibilities.slice(0,2).join(' · '),r-35,18);ctx.restore()});ctx.beginPath();ctx.arc(c,c,82,0,Math.PI*2);ctx.fillStyle='#263642';ctx.fill()}
+    function show(s){selected=s;document.querySelector('#match').textContent=s.matchType==='direct'?'Direct skill match':'Stretch strategy';document.querySelector('#title').textContent=s.name;document.querySelector('#activities').textContent=`${s.category} — ${s.activityPossibilities.join(' · ')}`;document.querySelector('#setup').textContent=s.setup;document.querySelector('#move').textContent=s.studentMove;document.querySelector('#challenge').textContent=s.teacherChallenge;document.querySelector('#promptBox').classList.remove('show');document.querySelector('#result').classList.add('show')}
+    document.querySelector('#spin').onclick=()=>{if(spinning)return;spinning=true;document.querySelector('#result').classList.remove('show');const s=getStrategy({concept:concept.value.trim()||'this concept',skill:skill.value,intelligent:true}),data=getStrategies(),index=data.findIndex(x=>x.id===s.id),segment=360/data.length,current=((rotation%360)+360)%360,target=360-(index*segment+segment/2);rotation+=1800+((target-current+360)%360);canvas.style.transform=`rotate(${rotation}deg)`;document.querySelector('#spin').disabled=true;setTimeout(()=>{show(s);spinning=false;document.querySelector('#spin').disabled=false;document.querySelector('#spin').textContent='Spin again'},5450)};
+    document.querySelector('#generate').onclick=()=>{if(!selected)return;const activity=selected.activityPossibilities[Math.floor(Math.random()*selected.activityPossibilities.length)];document.querySelector('#promptText').value=`Create a clear, student-facing visual exploration of “${concept.value.trim()||'this concept'}.”\n\nInstructional category: ${selected.category}\nStrategy: ${selected.name}\nNamed activity form: ${activity}\nTarget skill: ${skill.value}\n\n${selected.prompt}\n\nMake the important relationships, sequence, evidence, or decisions visible through concise labels and arrows. Include one uncertainty, limitation, conflicting result, or open question. Do not present the conclusion as absolute proof. Keep the visual appropriate for projection in a high-school classroom.`;document.querySelector('#promptBox').classList.add('show')};
+    document.querySelector('#copy').onclick=async()=>{const area=document.querySelector('#promptText');try{await navigator.clipboard.writeText(area.value)}catch{area.select();document.execCommand('copy')}document.querySelector('#copy').textContent='Copied';setTimeout(()=>document.querySelector('#copy').textContent='Copy prompt',1200)};
+    try{await loadStrategies();const skills=[...new Set(getStrategies().flatMap(s=>s.skills))].sort();skill.innerHTML=skills.map(s=>`<option>${s}</option>`).join('');skill.value=skills.includes('Apply a concept')?'Apply a concept':skills[0];draw();document.querySelector('#loading').hidden=true;document.querySelector('#app').hidden=false}catch(error){document.querySelector('#loading').className='error';document.querySelector('#loading').textContent=error.message}
+  </script>
+</body>
+</html>
